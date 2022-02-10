@@ -1,0 +1,21 @@
+import java.util.*;
+import java.util.function.Predicate;
+public class Main
+{
+	public static void main(String[] args) {
+		String [] name={"kakal","","maina",null,"amba",null};
+		ArrayList<String>list=new ArrayList<String>();
+		Predicate<String> p=s->s!=null && s.length()!=0;
+		for(String s:name)
+		{
+		    if(p.test(s))
+		    {
+		        list.add(s);
+		    }
+		    System.out.println("The valid names in list are");
+		    System.out.println(list);
+		}
+		
+		
+	}
+}
