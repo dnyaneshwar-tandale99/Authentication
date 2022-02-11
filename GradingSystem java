@@ -1,0 +1,63 @@
+package com.company;
+import java.util.ArrayList;
+import java.util.function.*;
+class Student{
+    String name;
+    int marks;
+    Student(String name,int marks)
+    {
+        this.name=name;
+        this.marks=marks;
+    }
+
+
+}
+
+public class Main {
+
+    public static void main(String[] args) {
+        ArrayList<Student> l=new ArrayList<>();
+        Function<Student,String> f=s->{
+            int marks=s.marks;
+            if(marks>=80)
+            {
+                return "A[Destinction]";
+            }
+            else if(marks>60 || marks<=79)
+            {
+                return "B[Fist Class]";
+            }
+            else if(marks>40 ||marks<59)
+            {
+                return "C[Pass]";
+            }
+            else{
+                return "fail";
+            }
+
+
+
+        };
+        for(Student s:l)
+        {
+            System.out.println("name is"+s.name);
+            System.out.println("Marks is"+s.marks);
+            System.out.println(f.apply(s));
+        }
+        populate(l);
+
+    }
+    public static void populate(ArrayList<Student>l)
+    {
+        l.add(new Student("Dnayneshwar",100));
+        l.add(new Student("Ravi",97));
+        l.add(new Student("Amir",70));
+        l.add(new Student("jagan",60));
+        l.add(new Student("Ram", 50));
+        l.add(new Student("Klevin",12));
+
+
+    }
+
+
+}
