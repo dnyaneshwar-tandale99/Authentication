@@ -1,0 +1,48 @@
+package com.company;
+import java.util.function.Predicate;
+import java.util.*;
+class SfEngineer{
+    String name;
+    int age;
+    boolean isHavingGf;
+    SfEngineer(String name,int age,boolean isHavingGf)
+    {
+        this.name=name;
+        this.age=age;
+        this.isHavingGf=isHavingGf;
+    }
+    public String toString()
+    {
+        return name;
+    }
+
+
+}
+
+public class Main {
+
+    public static void main(String[] args) {
+	Predicate<SfEngineer> p=se->se.isHavingGf==true && se.age>18;
+    SfEngineer[] list ={
+            new SfEngineer("Dnyaneshwar",23,true),
+            new SfEngineer("sunil",32,false),
+            new SfEngineer("Krishna",23,true),
+            new SfEngineer("Akshay",17,true),
+            new SfEngineer("parmeshwar",23,false),
+            new SfEngineer("Bhagawat",23,false),
+
+    };
+    System.out.println("These are perfect Softare engineers and they allowed to enter into pub");
+    for(SfEngineer se:list)
+    {
+        if(p.test(se))
+        {
+            System.out.println(se);
+        }
+
+    }
+
+
+
+    }
+}
