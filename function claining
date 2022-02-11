@@ -1,0 +1,16 @@
+package com.company;
+import java.util.function.*;
+
+public class Main {
+
+    public static void main(String[] args) {
+	// write your code here
+       Function<String,String>f1=s->s.toUpperCase();
+       Function<String,String>f2=s->s.substring(0,9);
+       System.out.println("The values of both functions are"+f1.apply("dnyaneshewarmauli"));
+       System.out.println("the values for this function is"+f2.apply("DnyaneshwarMauli"));
+       System.out.println("when both functions are combined togeter"+f1.andThen(f2).apply("dnyaneshwartandale"));
+       System.out.println("When both functions are3 to together and want to be done done operation in a such way that f2 should come fisrt"+f1.compose(f2).apply("DnyanshwarMauli"));
+
+    }
+}
