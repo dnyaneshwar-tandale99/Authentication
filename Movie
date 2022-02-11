@@ -1,0 +1,30 @@
+package com.company;
+import java.util.function.*;
+class Movie{
+    String name;
+    String result;
+    Movie(String name,String result)
+    {
+        this.name=name;
+        this.result=result;
+    }
+
+
+}
+
+
+
+public class Main {
+
+    public static void main(String[] args) {
+	
+        Consumer<Movie>c1=m->System.out.println("This movie "+m.name+ " will realse on 21st feb");
+        Consumer<Movie>c2=m->System.out.println("The movie "+m.name+" is just realises on box Office");
+        Consumer<Movie>c3=m->System.out.println("the movie "+m.name+" story is based on love");
+        Movie m1=new Movie("Shidhat","Hit");
+        c1.accept(m1);
+        c2.accept(m1);
+        c3.accept(m1);
+
+    }
+}
