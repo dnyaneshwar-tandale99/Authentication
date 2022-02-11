@@ -1,0 +1,12 @@
+package com.company;
+import java.util.function.*;
+
+public class Main {
+
+    public static void main(String[] args) {
+	// write your code here
+        String s="hello this i love java Programming";
+        Function<String,Integer> f=s1->s1.length()-s1.replaceAll(" ","").length();
+        System.out.println(f.apply(s));
+    }
+}
